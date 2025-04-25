@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamed Yusuf - Data Scientist</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2a2f4f;
+            --secondary-color: #0ea5e9;
+            --accent-color: #38bdf8;
+            --light-bg: #f9fafb;
+            --dark-bg: #111827;
+            --text-dark: #1f2937;
+            --text-light: #f3f4f6;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 1.5rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        .mobile-menu {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+        
+        section {
+            padding: 1rem 0;
+        }
+        
+        #hero {
+            padding-top: 7rem;
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(to right, rgba(42, 47, 79, 0.9), rgba(42, 47, 79, 0.7)), url('/api/placeholder/1200/800') center/cover;
+            color: var(--text-light);
+        }
+        
+        .hero-content {
+            max-width: 800px;
+        }
+        
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .hero-content h2 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: var(--accent-color);
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--text-light);
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.2rem;
+            color: var(--primary-color);
+        }
+        
+        #about {
+            background-color: var(--light-bg);
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .profile-img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .skill-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .skill-card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            font-size: 1.4rem;
+        }
+        
+        .skill-list {
+            list-style: none;
+        }
+        
+        .skill-list li {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .skill-list i {
+            color: var(--secondary-color);
+            margin-right: 0.5rem;
+        }
+        
+        #projects {
+            background-color: var(--light-bg);
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .project-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .project-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .project-content {
+            padding: 1.5rem;
+        }
+        
+        .project-content h3 {
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+        
+        .tech {
+            background-color: var(--light-bg);
+            color: var(--primary-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+        
+        .project-link {
+            color: var(--secondary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+        
+        .project-link i {
+            margin-left: 0.3rem;
+        }
+        
+        #experience {
+            background-color: white;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--light-bg);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background-color: var(--secondary-color);
+            border-radius: 50%;
+            top: 15px;
+            right: -12.5px;
+            z-index: 1;
+        }
+        
+        .left {
+            left: 0;
+        }
+        
+        .right {
+            left: 50%;
+        }
+        
+        .left::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-left: 10px solid white;
+            top: 15px;
+            right: 30px;
+        }
+        
+        .right::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-right: 10px solid white;
+            top: 15px;
+            left: 30px;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .timeline-content h3 {
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+        
+        .timeline-content h4 {
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-content .date {
+            color: #777;
+            margin-bottom: 1rem;
+        }
+        
+        #achievements {
+            background-color: var(--light-bg);
+        }
+        
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .achievement-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .achievement-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .achievement-card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .achievement-card p {
+            margin-bottom: 1rem;
+        }
+        
+        .achievement-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+        
+        #education {
+            background-color: white;
+        }
+        
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .education-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .education-card h3 {
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+        
+        .education-card h4 {
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .education-card .year {
+            color: #777;
+            margin-bottom: 1rem;
+        }
+        
+        #contact {
+            background: linear-gradient(to right, var(--primary-color), #1e3a8a);
+            color: var(--text-light);
+        }
+        
+        .contact-content {
+            display: flex;
+            justify-content: center;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            /* gap: 2rem; */
+        }
+        
+        .contact-info h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+        
+        .contact-details {
+            list-style: none;
+        }
+        
+        .contact-details li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-details i {
+            margin-right: 1rem;
+            color: var(--accent-color);
+            font-size: 1.2rem;
+        }
+        
+        .contact-form {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 10px;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        
+        textarea.form-control {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        footer {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            list-style: none;
+        }
+        
+        .social-links li {
+            margin: 0 1rem;
+        }
+        
+        .social-links a {
+            color: var(--text-light);
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu {
+                display: block;
+            }
+            
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: var(--primary-color);
+                flex-direction: column;
+                align-items: center;
+                padding: 2rem 0;
+                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+                transition: clip-path 0.4s ease-in-out;
+            }
+            
+            .nav-links.active {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            }
+            
+            .nav-links li {
+                margin: 1rem 0;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item::after {
+                left: 18px;
+            }
+            
+            .left::before, .right::before {
+                border-right: 10px solid white;
+                border-left: none;
+                left: 60px;
+            }
+            
+            .right {
+                left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Mohamed Yusuf</div>
+                <ul class="nav-links">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#achievements">Achievements</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Mohamed Yusuf N</h1>
+                <h2>Data Scientist</h2>
+                <p>Specialized in Machine Learning, Deep Learning, and Transformer-based generative models with 4+ years of industry experience.</p>
+                <a href="#contact" class="btn">Get In Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <img src=".\images\profile.jpg" alt="Mohamed Yusuf" class="profile-img">
+                <div class="about-text">
+                    <h3>Professional Profile</h3>
+                    <p>With over 4 years of experience in Data Science, I specialize in developing machine learning and deep learning solutions that drive business value. My expertise spans from predictive modeling to deploying transformer-based generative models in cloud environments.</p>
+                    <p>I am passionate about turning complex data into actionable insights and building scalable AI solutions that solve real-world problems. My approach combines technical expertise with strong business understanding to deliver impactful results.</p>
+                    <ul>
+                        <li><strong>Data Science Expertise:</strong> 4+ years of experience in Machine Learning & Deep Learning, specializing in predictive modeling and Transformer-based generative models with cloud deployment.</li>
+                        <li><strong>Technical Proficiency:</strong> Strong expertise in PyTorch, TensorFlow, AWS, Azure, Python, SQL and advanced ML/DL frameworks.</li>
+                        <li><strong>Machine Learning & Deep Learning Projects:</strong> Hands-on experience in developing and optimizing ML & DL models, Transformer Based Model, NLP, Computer Vision, and Generative AI.</li>
+                        <li><strong>Data Storytelling & Visualization:</strong> Skilled in presenting complex data insights using Matplotlib, Seaborn, Plotly ensuring data-driven decision-making.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-container">
+
+                <div class="skill-card">
+                    <h3><i class="fa-brands fa-aws"> </i> AWS Services</h3>
+                    <ul class="skill-list">
+                        <li><i class="fas fa-check-circle"></i> S3</li>
+                        <li><i class="fas fa-check-circle"></i> EC2</li>
+                        <li><i class="fas fa-check-circle"></i> Lambda</li>
+                        <li><i class="fas fa-check-circle"></i> Sagemaker</li>
+                        <li><i class="fas fa-check-circle"></i> ECR</li>
+                        <li><i class="fas fa-check-circle"></i> CloudWatch & Event Bridge</li>
+                        <li><i class="fas fa-check-circle"></i> CodePipeline & Codebuild & CodeDeploy</li>
+                        <li><i class="fas fa-check-circle"></i> StepFunction</li>
+                        <li><i class="fas fa-check-circle"></i> CloudFormation</li>
+                        <li><i class="fas fa-check-circle"></i> SNSTopic</li>
+                        <li><i class="fas fa-check-circle"></i> CloudShell</li>
+                        <li><i class="fas fa-check-circle"></i> API Gateway</li>
+                        <li><i class="fas fa-check-circle"></i> IAM</li>
+
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <h3><i class="fas fa-cloud"></i> Azure</h3>
+                    <ul class="skill-list">
+                        <li><i class="fas fa-check-circle"></i> Azure Virtual Machine</li>
+                        <li><i class="fas fa-check-circle"></i> Azure Blob Storage</li>
+                        <li><i class="fas fa-check-circle"></i> Azure Functions</li>
+                        <li><i class="fas fa-check-circle"></i> Azure Key Vault</li>
+                        <li><i class="fas fa-check-circle"></i> Azure Entra ID</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <h3><i class="fas fa-brain"></i> AI Frameworks</h3>
+                    <ul class="skill-list">
+                        <li><i class="fas fa-check-circle"></i> PyTorch</li>
+                        <li><i class="fas fa-check-circle"></i> TensorFlow</li>
+                        <li><i class="fas fa-check-circle"></i> Scikit-learn</li>
+                        <li><i class="fas fa-check-circle"></i> HuggingFace</li>
+                        <li><i class="fas fa-check-circle"></i> Spacy</li>
+                        <li><i class="fas fa-check-circle"></i> OpenCV</li>
+                        <li><i class="fas fa-check-circle"></i> MediaPipe</li>
+                        <li><i class="fas fa-check-circle"></i> OpenAI</li>
+                        <li><i class="fas fa-check-circle"></i> Ollama</li>
+                        <li><i class="fas fa-check-circle"></i> LangChain</li>
+                        <li><i class="fas fa-check-circle"></i> LangGraph</li>
+                    </ul>
+                </div>
+
+
+                <div class="skill-card">
+                    <h3><i class="fas fa-code"></i> Programming</h3>
+                    <ul class="skill-list">
+                        <li><i class="fas fa-check-circle"></i> Python</li>
+                        <li><i class="fas fa-check-circle"></i> SQL</li>
+                    </ul>
+                </div>
+    
+                <div class="skill-card">
+                    <h3><i class="fas fa-database"></i> Databases</h3>
+                    <ul class="skill-list">
+                        <li><i class="fas fa-check-circle"></i> MySQL</li>
+                        <li><i class="fas fa-check-circle"></i> PostgreSQL</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3><i class="fas fa-chart-bar"></i> Data Visualization</h3>
+                    <ul class="skill-list">
+                        <li><i class="fas fa-check-circle"></i> Tableau</li>
+                        <li><i class="fas fa-check-circle"></i> Matplotlib</li>
+                        <li><i class="fas fa-check-circle"></i> Seaborn</li>
+                        <li><i class="fas fa-check-circle"></i> Plotly</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3><i class="fas fa-cogs"></i> MLOps</h3>
+                    <ul class="skill-list">
+                        <li><i class="fas fa-check-circle"></i> CI/CD Pipelines</li>
+                        <li><i class="fas fa-check-circle"></i> Git</li>
+                        <li><i class="fas fa-check-circle"></i> DVC</li>
+                        <li><i class="fas fa-check-circle"></i> MLFlow</li>
+                        <li><i class="fas fa-check-circle"></i> ZenML</li>
+
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <h3><i class="fas fa-server"></i> Deployment</h3>
+                    <ul class="skill-list">
+                        <li><i class="fas fa-check-circle"></i> MLOps CI/CD Pipelines</li>
+                        <li><i class="fas fa-check-circle"></i> Flask</li>
+                        <li><i class="fas fa-check-circle"></i> FastAPI</li>
+                        <li><i class="fas fa-check-circle"></i> Streamlit</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                
+                <div class="project-card">
+                    <img src=".\images\avatar.png" alt="Custom AI Avatar Bot" class="project-img">
+                    <div class="project-content">
+                        <h3>Custom AI Avatar Bot</h3>
+                        <p>Developed an intelligent chatbot with a speaking Avatar Interface that uses Transformer-based SQL query generation and human-like responses.</p>
+                        <div class="tech-stack">
+                            <span class="tech">Python</span>
+                            <span class="tech">Transformers</span>
+                            <span class="tech">Machine Learning</span>
+                            <span class="tech">SQL</span>
+                            <span class="tech">Xamp</span>
+                            <span class="tech">Flask</span>
+                        </div>
+                        <!-- <a href="#" class="project-link">View Details <i class="fas fa-arrow-right"></i></a> -->
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <img src=".\images\Hospital salary.jpg" alt="Hospital Staff's Salary Prediction" class="project-img">
+                    <div class="project-content">
+                        <h3>Hospital Staff's Salary Prediction</h3>
+                        <p>Developed a salary prediction model for hospital staff with 89% accuracy using XGBoost Regressor and built a CI/CD pipeline using AWS tools.</p>
+                        <div class="tech-stack">
+                            <span class="tech">Python</span>
+                            <span class="tech">Pandas</span>
+                            <span class="tech">EDA</span>
+                            <span class="tech">Matplotlib</span>
+                            <span class="tech">Seaborn</span>
+                            <span class="tech">ScikitLearn</span>
+                            <span class="tech">AWS</span>
+                            <span class="tech">XGBoost</span>
+                        </div>
+                        <!-- <a href="#" class="project-link">View Details <i class="fas fa-arrow-right"></i></a> -->
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src=".\images\bert text.png" alt="LSG - Bert Text Classification" class="project-img">
+                    <div class="project-content">
+                        <h3>LSG - Bert Text Classification</h3>
+                        <p>Developed an Invoice Analyzing & Tracking Model using BERT-based text classification to categorize invoice descriptions and track legal compliance.</p>
+                        <div class="tech-stack">
+                            <span class="tech">Python</span>
+                            <span class="tech">SQL</span>
+                            <span class="tech">BERT</span>
+                            <span class="tech">Streamlit</span>
+                            <span class="tech">Flask</span>
+                            <span class="tech">Azure</span>
+                        </div>
+                        <!-- <a href="#" class="project-link">View Details <i class="fas fa-arrow-right"></i></a> -->
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src=".\images\appointment.png" alt="Custom Agents for Appointment System" class="project-img">
+                    <div class="project-content">
+                        <h3>Custom Agents for Appointment System</h3>
+                        <p>Created a comprehensive appointment system with multiple specialized agents for booking, Q&A, feedback, follow-ups, and FAQs using LangGraph with memory persistence.</p>
+                        <div class="tech-stack">
+                            <span class="tech">Python</span>
+                            <span class="tech">LangGraph</span>
+                            <span class="tech">STT</span>
+                            <span class="tech">TTS</span>
+                            <span class="tech">FastAPI</span>
+                            <span class="tech">Telynx</span>
+                            <span class="tech">WebSocket</span>
+                            <span class="tech">Async APIs</span>
+                        </div>
+                        <!-- <a href="#" class="project-link">View Details <i class="fas fa-arrow-right"></i></a> -->
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src=".\images\Hand Gesture.jfif" alt="Hand Gesture Detection to control the IOT devices" class="project-img">
+                    <div class="project-content">
+                        <h3>Hand Gesture Detection to control the IOT devices</h3>
+                        <p>Developed a Hand Gesture Detection system using MediaPipe to recognize real-time hand movements.Integrated with IoT devices to enable gesture-based control for smart automation.</p>
+                        <div class="tech-stack">
+                            <span class="tech">Python</span>
+                            <span class="tech">MediaPipe</span>
+                            <span class="tech">Deep Learning</span>
+                            <span class="tech">Tensorflow</span>
+                            <span class="tech">OpenCV</span>
+                            <span class="tech">Flask</span>
+                        </div>
+                        <!-- <a href="#" class="project-link">View Details <i class="fas fa-arrow-right"></i></a> -->
+                    </div>
+                </div>
+
+                
+                <div class="project-card">
+                    <img src=".\images\text calssify.png" alt="Text Image Classification for OCR" class="project-img">
+                    <div class="project-content">
+                        <h3>Text Image Classification for OCR</h3>
+                        <p>Developed a custom OCR application with a CNN model to classify text images into handwritten or machine-printed categories.</p>
+                        <div class="tech-stack">
+                            <span class="tech">Python</span>
+                            <span class="tech">CNN</span>
+                            <span class="tech">Tensorflow</span>
+                            <span class="tech">Selenium</span>
+                        </div>
+                        <!-- <a href="#" class="project-link">View Details <i class="fas fa-arrow-right"></i></a> -->
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>Data Scientist</h3>
+                        <h4>Colan Infotech Pvt. Ltd.</h4>
+                        <p class="date">2023 - Present</p>
+                        <p>Working on cutting-edge data science and machine learning projects, developing and deploying models that drive business value. Specializing in predictive modeling, NLP, computer vision, and transformer-based models. Building and maintaining MLOps CI/CD pipelines for model deployment and management.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h3>Data Analyst Trainer</h3>
+                        <h4>Shashank Software Training Center</h4>
+                        <p class="date">2021 - 2023</p>
+                        <p>Trained over 100+ Doctorate Professors in the Naan Mudhalvan Scheme for Data Analytics with Tableau. Developed and delivered comprehensive training programs on data analysis techniques, visualization tools, and statistical methods. Provided hands-on guidance in data-driven decision making processes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="achievements">
+        <div class="container">
+            <h2 class="section-title">Achievements</h2>
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Best Performer Award</h3>
+                    <p>Received Best Performer Award from Colan Infotech for deploying ML applications with MLOps CI/CD pipelines in AWS and text classification project deployment in Azure.</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>Trainer Excellence</h3>
+                    <p>Trained over 100+ Doctorate Professors in the Naan Mudhalvan Scheme for Data Analytics with Tableau, empowering academic professionals with data visualization skills.</p>
+                </div>
+                <!-- <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3>Project Implementation</h3>
+                    <p>Successfully implemented multiple end-to-end machine learning and deep learning projects with real-world applications, driving significant business value and operational efficiency.</p>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- <section id="education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="education-grid">
+                <div class="education-card">
+                    <h3>Bachelor of Science in Mathematics</h3>
+                    <h4>Anna University</h4>
+                    <p class="year">2017 - 2021</p>
+                    <p>Focused on computer science fundamentals, data structures, algorithms, and machine learning. Completed with distinction.</p>
+                </div>
+                <div class="education-card">
+                    <h3>Bachelor of Engineering in Computer Science</h3>
+                    <h4>Anna University</h4>
+                    <p class="year">2017 - 2021</p>
+                    <p>Focused on computer science fundamentals, data structures, algorithms, and machine learning. Completed with distinction.</p>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    
+    <section id="education">
+        <div class="container">
+            <h2 class="section-title">Education & Certifications</h2>
+            <div class="education-grid">
+                <div class="education-card">
+                    <h3>B.Sc Mathematics</h3>
+                    <h4>Sadakathullah Appa College - MS University</h4>
+                    <p class="year">Graduated</p>
+                    <p>Bachelor's degree in Mathematics providing a strong foundation in analytical thinking and problem-solving skills.</p>
+                </div>
+                <div class="education-card">
+                    <h3>Master Data Science Program</h3>
+                    <h4>GUVI</h4>
+                    <p class="year">Completed</p>
+                    <p>Comprehensive data science program covering machine learning, deep learning, statistical analysis, and data visualization techniques.</p>
+                </div>
+                <div class="education-card">
+                    <h3>MLOps with AWS</h3>
+                    <h4>Udemy</h4>
+                    <p class="year">Completed</p>
+                    <p>Completed Udemy's MLOps course, gaining hands-on experience in deploying and managing machine learning models in production environments.</p>
+                </div>
+                <div class="education-card">
+                    <h3>Business Analytics Program</h3>
+                    <h4>GUVI</h4>
+                    <p class="year">Completed</p>
+                    <p>Certified in Business Analytics Program with hands-on training in Tableau, Power BI, SQL, and Excel.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="contact">
+        <div class="container">
+            <!-- <h2 class="section-title">Get In Touch</h2> -->
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <ul class="contact-details">
+                        <li><i class="fas fa-phone"></i> +91 6381810492</li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:mohamedyusuf2528@gmail.com" style="color: var(--text-light); text-decoration: none;">mohamedyusuf2528@gmail.com</a></li>
+                        <!-- <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/mohamedyusuf00" style="color: var(--text-light); text-decoration: none;">linkedin.com/in/mohamedyusuf00</a></li>
+                        <li><i class="fab fa-github"></i> <a href="https://github.com/MohamedYusufDS" style="color: var(--text-light); text-decoration: none;">github.com/MohamedYusufDS</a></li> -->
+                        <li><i class="fas fa-map-marker-alt"></i> Chennai, Tamil Nadu, India</li>
+                    </ul>
+                </div>
+                <!-- <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <ul class="social-links">
+                <li><a href="https://www.linkedin.com/in/mohamedyusuf00" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                <li><a href="https://github.com/MohamedYusufDS" target="_blank"><i class="fab fa-github"></i></a></li>
+                <!-- <li><a href="mailto:mohamedyusuf2528@gmail.com"><i class="fas fa-envelope"></i></a></li> -->
+            </ul>
+            <p>Thanks to visit. Have a Nice Day!</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                    }
+                }
+            });
+        });
+        
+        // Add active class to navigation links on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (window.pageYOffset >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // Form submission (placeholder - would need backend processing)
+        const contactForm = document.querySelector('.contact-form form');
+        
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // In a real implementation, you would send the form data to a server
+                alert('Thank you for your message! I will get back to you soon.');
+                this.reset();
+            });
+        }
+    </script>
+</body>
+</html>
