@@ -443,12 +443,19 @@
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             /* gap: 2rem; */
         }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;     /* centers child elements horizontally */
+            text-align: center;      /* centers text inside elements */
+        }
         
         .contact-info h3 {
             margin-bottom: 1.5rem;
             font-size: 1.8rem;
         }
-        
+/*         
         .contact-details {
             list-style: none;
         }
@@ -464,7 +471,29 @@
             color: var(--accent-color);
             font-size: 1.2rem;
         }
-        
+         */
+
+        .contact-details {
+            list-style: none;
+            display: flex;           /* make items horizontal */
+            gap: 2rem;               /* space between items */
+            padding: 0;              /* remove default padding */
+            flex-wrap: wrap;         /* wrap to next line if needed */
+            align-items: center;
+        }
+
+        .contact-details li {
+            margin-bottom: 0;        /* remove vertical spacing */
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-details i {
+            margin-right: 0.5rem;
+            color: var(--accent-color);
+            font-size: 1.2rem;
+        }
+
         .contact-form {
             background-color: rgba(255, 255, 255, 0.1);
             padding: 2rem;
@@ -604,7 +633,7 @@
             <div class="hero-content">
                 <h1>Mohamed Yusuf N</h1>
                 <h2>Data Scientist</h2>
-                <p>Specialized in Machine Learning, Deep Learning, and Transformer-based generative models with 4+ years of industry experience.</p>
+                <p>Specialized in Machine Learning, Deep Learning, Transformer-based generative models, and MLOps deployment with 2+ years of industry experience.</p>
                 <a href="#contact" class="btn">Get In Touch</a>
             </div>
         </div>
@@ -617,10 +646,12 @@
                 <img src=".\images\profile.jpg" alt="Mohamed Yusuf" class="profile-img">
                 <div class="about-text">
                     <h3>Professional Profile</h3>
-                    <p>With over 4 years of experience in Data Science, I specialize in developing machine learning and deep learning solutions that drive business value. My expertise spans from predictive modeling to deploying transformer-based generative models in cloud environments.</p>
+                    <p>With over 4 years of experience in the Data domain, I specialize in developing machine learning and deep learning solutions that drive business value. My expertise spans from predictive modeling to deploying transformer-based generative models in cloud environments.</p>
                     <p>I am passionate about turning complex data into actionable insights and building scalable AI solutions that solve real-world problems. My approach combines technical expertise with strong business understanding to deliver impactful results.</p>
                     <ul>
-                        <li><strong>Data Science Expertise:</strong> 4+ years of experience in Machine Learning & Deep Learning, specializing in predictive modeling and Transformer-based generative models with cloud deployment.</li>
+                        <li><strong>Data Science Expertise:</strong> 2 years of hands-on experience in Machine Learning & Deep Learning, specializing in predictive modeling and Transformer-based generative models with cloud deployment (AWS & Azure).</li>
+                        <li><strong>Data Analyst Trainer:</strong> Around 2 years of experience training aspiring data professionals in Data Analysis, Python, SQL, and visualization tools.</li>
+
                         <li><strong>Technical Proficiency:</strong> Strong expertise in PyTorch, TensorFlow, AWS, Azure, Python, SQL and advanced ML/DL frameworks.</li>
                         <li><strong>Machine Learning & Deep Learning Projects:</strong> Hands-on experience in developing and optimizing ML & DL models, Transformer Based Model, NLP, Computer Vision, and Generative AI.</li>
                         <li><strong>Data Storytelling & Visualization:</strong> Skilled in presenting complex data insights using Matplotlib, Seaborn, Plotly ensuring data-driven decision-making.</li>
@@ -932,18 +963,21 @@
                     <p class="year">Graduated</p>
                     <p>Bachelor's degree in Mathematics providing a strong foundation in analytical thinking and problem-solving skills.</p>
                 </div>
-                <div class="education-card">
-                    <h3>Master Data Science Program</h3>
-                    <h4>GUVI</h4>
-                    <p class="year">Completed</p>
-                    <p>Comprehensive data science program covering machine learning, deep learning, statistical analysis, and data visualization techniques.</p>
-                </div>
+
                 <div class="education-card">
                     <h3>MLOps with AWS</h3>
                     <h4>Udemy</h4>
                     <p class="year">Completed</p>
                     <p>Completed Udemy's MLOps course, gaining hands-on experience in deploying and managing machine learning models in production environments.</p>
                 </div>
+                
+                <div class="education-card">
+                    <h3>Master Data Science Program</h3>
+                    <h4>GUVI</h4>
+                    <p class="year">Completed</p>
+                    <p>Comprehensive data science program covering machine learning, deep learning, statistical analysis, and data visualization techniques.</p>
+                </div>
+
                 <div class="education-card">
                     <h3>Business Analytics Program</h3>
                     <h4>GUVI</h4>
