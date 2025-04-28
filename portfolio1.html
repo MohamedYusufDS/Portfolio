@@ -98,6 +98,143 @@
         .hero-content {
             max-width: 800px;
         }
+
+        .hero-content-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .hero-content {
+            max-width: 70%;
+        }
+
+        /* .resume-download {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 2rem;
+        }
+
+        .resume-download a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 50%;
+            border: 2px solid var(--accent-color);
+        }
+
+        .resume-download i {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .resume-download span {
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .resume-download a:hover {
+            transform: scale(1.1);
+            background: rgba(255, 255, 255, 0.2);
+        } */
+
+
+        .resume-download {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 2rem;
+        }
+
+        .resume-download a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            padding: 1rem 1.5rem;
+            background: transparent;
+            border: none;
+        }
+
+        .resume-icon {
+            position: relative;
+            width: 60px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0.5rem;
+            color: #333;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .resume-icon i {
+            font-size: 4rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent-color);
+        }
+
+        .resume-lines {
+            display: flex;
+            flex-direction: column;
+            width: 70%;
+        }
+
+        .resume-lines span {
+            height: 2px;
+            background-color: #999;
+            margin: 2px 0;
+        }
+
+        .resume-download span {
+            font-size: 1rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            margin-top: 0.5rem;
+        }
+
+        .resume-download a:hover .resume-icon {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        @media (max-width: 768px) {
+            .hero-content-wrapper {
+                flex-direction: column;
+            }
+            
+            .hero-content {
+                max-width: 100%;
+                margin-bottom: 2rem;
+            }
+            
+            .resume-download {
+                margin-left: 0;
+            }
+        }
+
+        .hero-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+        }
+
+        .hero-icon i:hover {
+            transform: scale(1.2);
+        }
         
         .hero-content h1 {
             font-size: 3rem;
@@ -628,13 +765,39 @@
         </div>
     </header>
 
-    <section id="hero">
+    <!-- <section id="hero">
         <div class="container">
             <div class="hero-content">
                 <h1>Mohamed Yusuf N</h1>
                 <h2>Data Scientist</h2>
-                <p>Specialized in Machine Learning, Deep Learning, Transformer-based generative models, and MLOps deployment with 2+ years of industry experience.</p>
-                <a href="#contact" class="btn">Get In Touch</a>
+                <p>Specialized in Machine Learning, Deep Learning, Transformer-based Generative Models, and MLOps deployment, with 4 years of experience. Currently a Data Scientist with 2 years of experience, previously worked as a Data Analytics Trainer for 2 years.</p>
+                <a href="#contact" class="btn">Get In Touch</a>                
+            </div>
+        </div>
+    </section> -->
+
+    <section id="hero">
+        <div class="container">
+            <div class="hero-content-wrapper">
+                <div class="hero-content">
+                    <h1>Mohamed Yusuf N</h1>
+                    <h2>Data Scientist</h2>
+                    <p>Specialized in Machine Learning, Deep Learning, Transformer-based Generative Models, and MLOps deployment, with 4 years of experience. Currently a Data Scientist with 2 years of experience, previously worked as a Data Analytics Trainer for 2 years.</p>
+                    <a href="#contact" class="btn">Get In Touch</a>                
+                </div>
+                <div class="resume-download">
+                    <a href=".\Mohamed Yusuf Data_Science (3) (1).docx" download title="Download Resume">
+                        <div class="resume-icon">
+                            <i class="fas fa-file-alt"></i>
+                            <div class="resume-lines">
+                                <!-- <span></span>
+                                <span></span>
+                                <span></span> -->
+                            </div>
+                        </div>
+                        <span>Resume</span>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
