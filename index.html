@@ -107,43 +107,8 @@
         }
 
         .hero-content {
-            max-width: 70%;
+            max-width: 100%;
         }
-
-        /* .resume-download {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-left: 2rem;
-        }
-
-        .resume-download a {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            color: var(--accent-color);
-            text-decoration: none;
-            transition: all 0.3s ease;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 1.5rem;
-            border-radius: 50%;
-            border: 2px solid var(--accent-color);
-        }
-
-        .resume-download i {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .resume-download span {
-            font-size: 1rem;
-            font-weight: bold;
-        }
-
-        .resume-download a:hover {
-            transform: scale(1.1);
-            background: rgba(255, 255, 255, 0.2);
-        } */
 
 
         .resume-download {
@@ -269,6 +234,15 @@
             transform: translateY(-3px);
         }
         
+        .btn-secondary {
+            background-color: var(--accent-color);
+            margin-left: 1rem;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--secondary-color);
+        }
+
         .section-title {
             text-align: center;
             margin-bottom: 3rem;
@@ -688,6 +662,11 @@
         }
         
         @media (max-width: 768px) {
+            .hero-content .btn {
+                display: inline-block;
+                margin-bottom: 1rem;
+            }
+
             .mobile-menu {
                 display: block;
             }
@@ -765,17 +744,6 @@
         </div>
     </header>
 
-    <!-- <section id="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Mohamed Yusuf N</h1>
-                <h2>Data Scientist</h2>
-                <p>Specialized in Machine Learning, Deep Learning, Transformer-based Generative Models, and MLOps deployment, with 4 years of experience. Currently a Data Scientist with 2 years of experience, previously worked as a Data Analytics Trainer for 2 years.</p>
-                <a href="#contact" class="btn">Get In Touch</a>                
-            </div>
-        </div>
-    </section> -->
-
     <section id="hero">
         <div class="container">
             <div class="hero-content-wrapper">
@@ -784,27 +752,16 @@
                     <h2>Data Scientist</h2>
                     <p>Specialized in Machine Learning, Deep Learning, Transformer-based Generative Models, and MLOps deployment, with 4 years of experience. Currently a Data Scientist with 2 years of experience, previously worked as a Data Analytics Trainer for 2 years.</p>
                     <a href="#contact" class="btn">Get In Touch</a>                
+                    <a href=".\Yusuf_Resume (2).pdf" download class="btn btn-secondary"><i class="fas fa-download"></i> Resume</a>
                 </div>
-                <div class="resume-download">
-                    <a href=".\Yusuf_Resume (2).pdf" download title="Download Resume">
-                        <div class="resume-icon">
-                            <i class="fas fa-file-alt"></i>
-                            <div class="resume-lines">
-                                <!-- <span></span>
-                                <span></span>
-                                <span></span> -->
-                            </div>
-                        </div>
-                        <span>Resume</span>
-                    </a>
-                </div>
+
             </div>
         </div>
     </section>
 
     <section id="about">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
+            <!-- <h2 class="section-title">About Me</h2> -->
             <div class="about-content">
                 <img src=".\images\profile.jfif" alt="Mohamed Yusuf" class="profile-img">
                 <div class="about-text">
